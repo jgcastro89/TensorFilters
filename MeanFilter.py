@@ -1,7 +1,7 @@
 import numpy as np
 from FilterBase import FilterBase
 
-class mean_filter(filterBase):
+class mean_filter(FilterBase):
     def __init__(self, img, kernel:int, stride:int, padding:int) -> None:
         self._input_checks(kernel, stride, padding)
         self._set_output_dims(kernel, stride, padding) 
