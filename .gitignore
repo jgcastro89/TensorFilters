@@ -9,3 +9,4 @@
 /.vs/TensorFilters/v17
 /.vs/TensorFilters/FileContentIndex
 /tensor_filter.egg-info
+/__pycache__
