@@ -3,3 +3,8 @@
 ################################################################################
 
 /__pycache__/FilterABC.cpython-38.pyc
+/__pycache__/FilterBase.cpython-38.pyc
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/TensorFilters/v17
+/.vs/TensorFilters/FileContentIndex

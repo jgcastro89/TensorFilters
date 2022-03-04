@@ -1,6 +1,7 @@
-from FilterABC import FilterABC
+import FilterABC
+import numpy as np
 
-class filterBase(FilterABC):
+class filterBase(FilterABC.FilterABC):
     def __init__(self) -> None:
         self.img = None
         self.padding = None

@@ -1,12 +1,14 @@
 import numpy as np
-from FilterBase import FilterBase
+from FilterBase import filterBase
 
-class mean_filter(FilterBase):
+class mean_filter(filterBase):
     def __init__(self, img, kernel:int, stride:int, padding:int) -> None:
         self._input_checks(kernel, stride, padding)
-        self._set_output_dims(kernel, stride, padding) 
 
         self.img = img
+
+        self._set_output_dims(kernel, stride, padding) 
+
         self.kernel = kernel
         self.stride = stride
         self.padding = padding
@@ -28,3 +30,7 @@ class mean_filter(FilterBase):
                 if temp.size == self.kernel**2:
                     # O(1)
                     self.smoothCriminal.append(np.mean(temp))
+
+img = np.random.rand(768,1024)                    
+av_filter = mean_filter(img, kernel=4, stride=4, padding=0)
+print(av_filter.smoothCriminal.shape)
