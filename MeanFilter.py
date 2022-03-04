@@ -18,11 +18,11 @@ class mean_filter(filterBase):
         
         self.smoothCriminal = []
         
-        self._mean()
+        self._execute()
         self._convert_to_numpy_array()
         self._reshape_numpy_array()
             
-    def _mean(self):
+    def _execute(self):
         # O(n*m)
         for i in range(0, self.img.shape[0], self.stride):
             for j in range(0, self.img.shape[1], self.stride):

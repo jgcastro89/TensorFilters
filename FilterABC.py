@@ -16,3 +16,7 @@ class FilterABC(ABC):
     @abstractmethod
     def _pad_image(self):
         pass
+
+    @abstractmethod
+    def _execute(self):
+        pass
