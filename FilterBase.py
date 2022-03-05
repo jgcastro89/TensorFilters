@@ -2,19 +2,27 @@ import FilterABC
 import numpy as np
 
 class filterBase(FilterABC.FilterABC):
-    def __init__(self) -> None:
-        self.img = None
-        self.padding = None
+    def __init__(self, img, kernel:int, stride:int, padding:int) -> None:
+        self.img = img
+        self.kernel = kernel
+        self.stride = stride
+        self.padding = padding
+        self.smoothCriminal = []
         self.outputDims = None
-        self.smoothCriminal = None
-        
-    def _input_checks(self, kernel, stride, padding):
-        assert type(kernel) is int
-        assert type(stride) is int
-        assert type(padding) is int
 
-        if kernel < 1 or stride < 1 or padding < 0:
-            print("kernel/stride must be >= 0: padding must be > 0")
+        self._input_checks() 
+        self._set_output_dims()
+        
+        if self.padding > 0:
+            self._pad_image()
+        
+    def _input_checks(self):
+        assert type(self.kernel) is int
+        assert type(self.stride) is int
+        assert type(self.padding) is int
+
+        if self.kernel < 1 or self.stride < 1 or self.padding < 0:
+            print("kernel/stride must be >= 0: padding must be >= 0")
             raise ValueError
     
     def _convert_to_numpy_array(self):
@@ -27,5 +35,5 @@ class filterBase(FilterABC.FilterABC):
     def _pad_image(self):
         self.img = np.pad(self.img, pad_width=self.padding, mode='constant')
         
-    def _set_output_dims(self, kernel, stride, padding):
-        self.outputDims =[int((v - kernel + 2*padding)/(stride)) + 1 for v in self.img.shape]
+    def _set_output_dims(self):
+        self.outputDims =[int((v - self.kernel + 2*self.padding)/(self.stride)) + 1 for v in self.img.shape]
