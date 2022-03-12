@@ -1,7 +1,7 @@
-Package that applies filters to images/numpy arrays. 
+Package that applies filters to images/numpy arrays.
 
 Example use:
 
-img = np.random.rand(768,1024)                    
+img = np.random.rand(768,1024)
 av_filter = mean_filter(img, kernel=4, stride=4, padding=0)
 print(av_filter.smoothCriminal.shape)
