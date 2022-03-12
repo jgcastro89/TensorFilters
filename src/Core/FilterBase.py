@@ -1,8 +1,8 @@
-import FilterABC
 import numpy as np
+from Core.FilterABC import FilterABC
 
 
-class filterBase(FilterABC.FilterABC):
+class FilterBase(FilterABC):
     def __init__(self, img, kernel: int, stride: int, padding: int) -> None:
         self.img = img
         self.kernel = kernel
