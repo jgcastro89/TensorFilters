@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 long_description = ""
 
@@ -8,6 +8,6 @@ setup(
     description="Python package that applies filters to tensors",
     long_description=long_description,
     author="Joel Castro",
-    packages=find_packages(),
+    packages=find_namspace_packages(":", "src"),
     install_requires=["numpy"]
     )
