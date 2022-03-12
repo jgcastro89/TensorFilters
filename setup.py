@@ -1,4 +1,5 @@
-from setuptools import setup, find_namespace_packages
+from setuptools import find_namespace_packages
+from setuptools import setup
 
 long_description = ""
 
@@ -9,5 +10,5 @@ setup(
     long_description=long_description,
     author="Joel Castro",
     packages=find_namspace_packages(":", "src"),
-    install_requires=["numpy"]
-    )
+    install_requires=["numpy"],
+)

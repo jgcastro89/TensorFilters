@@ -1,8 +1,9 @@
 import numpy as np
 from Core.FilterBase import FilterBase
 
+
 class MeanFilter(FilterBase):
-    def __init__(self, img, kernel:int, stride:int, padding:int) -> None:
+    def __init__(self, img, kernel: int, stride: int, padding: int) -> None:
         super().__init__(img, padding)
 
         self._execute()
@@ -13,7 +14,7 @@ class MeanFilter(FilterBase):
         # O(n*m)
         for i in range(0, self.img.shape[0], self.stride):
             for j in range(0, self.img.shape[1], self.stride):
-                temp = self.img[i:i+self.kernel, j:j+self.kernel]
-                if temp.size == self.kernel**2:
+                temp = self.img[i : i + self.kernel, j : j + self.kernel]
+                if temp.size == self.kernel ** 2:
                     # O(1)
                     self.smoothCriminal.append(np.mean(temp))

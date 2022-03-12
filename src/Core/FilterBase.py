@@ -1,8 +1,9 @@
 import FilterABC
 import numpy as np
 
+
 class filterBase(FilterABC.FilterABC):
-    def __init__(self, img, kernel:int, stride:int, padding:int) -> None:
+    def __init__(self, img, kernel: int, stride: int, padding: int) -> None:
         self.img = img
         self.kernel = kernel
         self.stride = stride
@@ -30,10 +31,15 @@ class filterBase(FilterABC.FilterABC):
         self.smoothCriminal = np.array(self.smoothCriminal)
 
     def _reshape_numpy_array(self):
-        self.smoothCriminal = self.smoothCriminal.reshape(self.outputDims[0], self.outputDims[1])
+        self.smoothCriminal = self.smoothCriminal.reshape(
+            self.outputDims[0], self.outputDims[1]
+        )
 
     def _pad_image(self):
-        self.img = np.pad(self.img, pad_width=self.padding, mode='constant')
+        self.img = np.pad(self.img, pad_width=self.padding, mode="constant")
 
     def _set_output_dims(self):
-        self.outputDims =[int((v - self.kernel + 2*self.padding)/(self.stride)) + 1 for v in self.img.shape]
+        self.outputDims = [
+            int((v - self.kernel + 2 * self.padding) / (self.stride)) + 1
+            for v in self.img.shape
+        ]
