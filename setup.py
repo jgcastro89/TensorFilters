@@ -6,7 +6,7 @@ long_description = ""
 setup(
     name="tensor_filter",
     version="0.0.1",
-    description="Python package that applies filters to tensors",
+    description="Python package that applies filters to images",
     long_description=long_description,
     author="Joel Castro",
     packages=find_namspace_packages(":", "src"),
