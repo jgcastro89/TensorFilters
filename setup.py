@@ -9,6 +9,7 @@ setup(
     description="Python package that applies filters to images",
     long_description=long_description,
     author="Joel Castro",
-    packages=find_namespace_packages("", "src"),
+    package_dir={"": "src"},
+    packages=find_namespace_packages("src"),
     install_requires=["numpy"],
 )
