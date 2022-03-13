@@ -3,10 +3,6 @@
 ################################################################################
 
 /*.pyc
-/.vs/ProjectSettings.json
-/.vs/slnx.sqlite
-/.vs/TensorFilters/v17
-/.vs/TensorFilters/FileContentIndex
-/tensor_filter.egg-info
+/*.egg-info
 /*__pycache__
 /*.vs
