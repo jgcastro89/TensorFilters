@@ -7,3 +7,5 @@
 /*__pycache__
 /*.vs
 /src/tensor_filter.egg-info
+/src/filter_core/__pycache__
+/src/image_filter/__pycache__
