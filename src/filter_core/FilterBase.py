@@ -1,5 +1,5 @@
 import numpy as np
-from Core.FilterABC import FilterABC
+from filter_core.FilterABC import FilterABC
 
 
 class FilterBase(FilterABC):
