@@ -2,12 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/__pycache__/FilterABC.cpython-38.pyc
-/__pycache__/FilterBase.cpython-38.pyc
+/*.pyc
 /.vs/ProjectSettings.json
 /.vs/slnx.sqlite
 /.vs/TensorFilters/v17
 /.vs/TensorFilters/FileContentIndex
 /tensor_filter.egg-info
-/__pycache__
-/.vs
+/*__pycache__
+/*.vs
