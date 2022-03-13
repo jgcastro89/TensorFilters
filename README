@@ -1,7 +1,6 @@
-Package that applies filters to images/numpy arrays.
+import numpy as np
+from image_filter.MeanFilter import MeanFilter
 
-Example use:
-
-img = np.random.rand(768,1024)
-av_filter = mean_filter(img, kernel=4, stride=4, padding=0)
+img = np.random.rand(768, 1024)
+av_filter = MeanFilter(img, kernel=4, stride=4, padding=0)
 print(av_filter.smoothCriminal.shape)
