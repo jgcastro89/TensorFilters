@@ -3,7 +3,21 @@ from filter_core.FilterBase import FilterBase
 
 
 class MedianFilter(FilterBase):
-    def __init__(self, img, kernel: int, stride: int, padding: int) -> None:
+    """_summary_
+
+    Args:
+        FilterBase (_type_): _description_
+    """
+
+    def __init__(self, img: np.array, kernel: int, stride: int, padding: int) -> None:
+        """_summary_
+
+        Args:
+            img (np.array): _description_
+            kernel (int): _description_
+            stride (int): _description_
+            padding (int): _description_
+        """
         super().__init__(img, kernel, stride, padding)
 
         self._execute()

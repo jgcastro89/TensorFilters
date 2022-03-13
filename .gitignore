@@ -6,3 +6,4 @@
 /*.egg-info
 /*__pycache__
 /*.vs
+/src/tensor_filter.egg-info
